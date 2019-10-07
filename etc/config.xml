@@ -4,6 +4,9 @@
         <clock_config>
             <clock>
                 <clock_type>{"_1565801796487_487":{"customer_group":"0","clock_type":"square"}}</clock_type>
+                <clock_size>S</clock_size>
+                <color_picker>#fa2af3</color_picker>
+                <text_color>#7bbd83</text_color>
             </clock>
         </clock_config>
     </default>

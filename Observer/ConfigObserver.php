@@ -31,7 +31,6 @@ class ConfigObserver implements ObserverInterface
 
     public function execute(EventObserver $observer)
     {
-        $a = $observer;
         $types = ['layout','block_html'];
         foreach ($types as $type)
         {

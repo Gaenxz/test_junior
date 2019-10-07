@@ -30,4 +30,18 @@ Class Clock extends Template
         ];
         return $clockConfig;
     }
+
+    public function checkConfig()
+    {
+        $size = @$this->scopeConfig->getValue('clock_config/clock/clock_size');
+        $bgColor = @$this->scopeConfig->getValue('clock_config/clock/color_picker');
+        $textColor = @$this->scopeConfig->getValue('clock_config/clock/text_color');
+
+        if (isset($size) && isset($bgColor) && isset($textColor))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
 }

@@ -19,19 +19,22 @@
                 <field id="clock_title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Title Clock</label>
                 </field>
-                <field id="clock_size" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="clock_size" translate="label" type="select" canRestore="1" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Size Clock</label>
                     <source_model>Magenest\Rules\Model\Config\Source\Size</source_model>
+                    <validate>required-entry</validate>
                 </field>
-                <field id="color_picker" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="color_picker" translate="label" type="text" canRestore="1" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Color Picker</label>
                     <frontend_model>Magenest\Rules\Block\Chapter2\ColorPicker</frontend_model>
+                    <validate>required-entry</validate>
                 </field>
-                <field id="text_color" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="text_color" translate="label" type="text" canRestore="1" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Text Color</label>
                     <frontend_model>Magenest\Rules\Block\Chapter2\ColorPicker</frontend_model>
+                    <validate>required-entry</validate>
                 </field>
-                <field id="clock_type" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="clock_type" translate="label" type="select" canRestore="1" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Clock Type</label>
                     <frontend_model>Magenest\Rules\Block\Adminhtml\Chapter2\Form\Field\Type</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
