@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Magenest_Rules::Countdown" title="Countdow" module="Magenest_Rules" sortOrder="100" resource="Magenest_Rules::Countdown"/>
+        <add id="Magenest_Rules::Countdown" title="Countdown" module="Magenest_Rules" sortOrder="100" resource="Magenest_Rules::Countdown"/>
         <add id="Magenest_Rules::Clock" title="Clock Management" module="Magenest_Rules" sortOrder="10" parent="Magenest_Rules::Countdown" action="admin/system_config/edit/section/clock_config/" resource="Magenest_Rules::Clock"/>
         <add id="Magenest_Rules::ClockConfig" title="Clock Configuration" module="Magenest_Rules" sortOrder="10" parent="Magenest_Rules::Countdown" action="admin/system_config/edit/section/clock_config/" resource="Magenest_Rules::Clock"/>
     </menu>

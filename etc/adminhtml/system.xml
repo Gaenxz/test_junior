@@ -16,7 +16,9 @@
             <resource>Magenest_Rules::Clock</resource>
             <group id="clock" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Default Clock</label>
-                <field id="clock_title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+<!--                <attribute type="expanded">0</attribute>-->
+                <frontend_model>Magenest\Rules\Block\Adminhtml\Chapter2\Advance\Expand</frontend_model>
+                <field id="clock_title" translate="label" type="text" canRestore="1" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Title Clock</label>
                 </field>
                 <field id="clock_size" translate="label" type="select" canRestore="1" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -37,7 +39,27 @@
                 <field id="clock_type" translate="label" type="select" canRestore="1" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Clock Type</label>
                     <frontend_model>Magenest\Rules\Block\Adminhtml\Chapter2\Form\Field\Type</frontend_model>
-                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <backend_model>Magenest\Rules\Block\Adminhtml\Chapter2\Advance\Extend</backend_model>
+                </field>
+            </group>
+        </section>
+        <section id="depend_size" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <tab>magenest_countdown</tab>
+            <label>Depend by Clock Size</label>
+            <resource>Magenest_Rules::Clock</resource>
+            <group id="depend_clock" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Depend by Clock Size</label>
+                <attribute type="expanded">0</attribute>
+                <field id="depend_clock_title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title Clock</label>
+                </field>
+            </group>
+<!--            <frontend_model>Magenest\Rules\Block\Adminhtml\Chapter2\Advance\Depend</frontend_model>-->
+        </section>
+        <section id="payment">
+            <group id="checkmo">
+                <field id="order_status" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>This is new Order Status</label>
                 </field>
             </group>
         </section>

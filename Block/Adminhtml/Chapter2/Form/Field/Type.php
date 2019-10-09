@@ -18,6 +18,8 @@ class Type extends AbstractFieldArray
 
     protected $selectype;
 
+    protected $_template = 'Magenest_Rules::array.phtml';
+
     public function __construct(SelectType $selectType,Collection $customerGroup, Factory $elementFactory,Context $context, array $data = [])
     {
         parent::__construct($context, $data);
@@ -31,10 +33,10 @@ class Type extends AbstractFieldArray
      */
     protected function _prepareToRender()
     {
-        $this->addColumn('customer_group', ['label' => __('Customer Group')]);
-        $this->addColumn('clock_type', ['label' => __('Clock Type')]);
+        $this->addColumn('customer_group', ['label' => __('Customer Group'), 'renderer' => $this->getRenderer()]);
+        $this->addColumn('clock_type', ['label' => __('Clock Type'), 'renderer' => $this->getRenderer()]);
         $this->_addAfter = false;
-        $this->_addButtonLabel = __('Add Type');
+        $this->_addButtonLabel = false;
     }
 
     public function renderCellTemplate($columnName)
@@ -51,7 +53,6 @@ class Type extends AbstractFieldArray
             )->setValues(
                 $options
             );
-
             return str_replace("\n", '', $element->getElementHtml());
         }
         if ($columnName == 'clock_type'
@@ -71,7 +72,31 @@ class Type extends AbstractFieldArray
 
             return str_replace("\n", '', $element->getElementHtml());
         }
-
         return parent::renderCellTemplate($columnName);
+    }
+
+    public function _prepareArrayRow(\Magento\Framework\DataObject $row)
+    {
+        $optionExtraAttr = [];
+        $optionExtraAttr['option_' . 1]
+            = 'selected="selected"';
+        $optionExtraAttr['option_' . $this->getRenderer()
+            ->calcOptionHash($row->getData('clock_type'))]
+            = 'selected="selected"';
+        $row->setData(
+            'option_extra_attrs',
+            $optionExtraAttr
+        );
+    }
+
+    public function getRenderer()
+    {
+        $selectBlock = $this->getLayout()->createBlock(
+            \Magento\Framework\View\Element\Html\Select::class,
+            '',
+            ['data' => ['is_render_to_js_template' => true]]
+        );
+
+        return $selectBlock;
     }
 }

@@ -3,6 +3,7 @@
     <default>
         <clock_config>
             <clock>
+                <clock_title>Clock</clock_title>
                 <clock_type>{"_1565801796487_487":{"customer_group":"0","clock_type":"square"}}</clock_type>
                 <clock_size>S</clock_size>
                 <color_picker>#fa2af3</color_picker>
