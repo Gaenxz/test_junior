@@ -3,11 +3,11 @@
 namespace Magenest\Rules\Block\Adminhtml\Chapter2\Advance;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
-use Magento\Framework\App\Config\Value as ConfigValue;
+use Magento\Config\Model\Config\Backend\Serialized\ArraySerialized;
 use Magento\Framework\Serialize\SerializerInterface;
 use Magento\Customer\Model\ResourceModel\Group\Collection;
 
-class Extend extends ConfigValue
+class Extend extends ArraySerialized
 {
     protected $serializer;
 

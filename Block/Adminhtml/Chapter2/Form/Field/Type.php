@@ -52,7 +52,7 @@ class Type extends AbstractFieldArray
                 $this->_getCellInputElementId('<%- _id %>', $columnName)
             )->setValues(
                 $options
-            );
+            )->setReadonly(true);
             return str_replace("\n", '', $element->getElementHtml());
         }
         if ($columnName == 'clock_type'
