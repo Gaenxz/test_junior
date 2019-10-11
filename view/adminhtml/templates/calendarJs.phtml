@@ -1,0 +1,10 @@
+<script>
+    require(['jquery','mage/calendar'], function ($) {
+        $("input[name='magenest[custom_date]']").calendar({
+            beforeShowDay : function (date) {
+                if (date.getDate() <= 7 || date.getDate() >= 12)
+                    return [true.'asdadasd'];
+            }
+        })
+    })
+</script>

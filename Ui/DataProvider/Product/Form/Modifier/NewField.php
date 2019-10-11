@@ -1,14 +1,17 @@
 <?php
 namespace Magenest\Rules\Ui\DataProvider\Product\Form\Modifier;
+
 use Magento\Catalog\Model\Locator\LocatorInterface;
 use Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier;
 use Magento\Ui\Component\Form\Fieldset;
 use Magento\Ui\Component\Form\Field;
 use Magento\Ui\Component\Form\Element\Select;
 use Magento\Ui\Component\Form\Element\DataType\Text;
+
 class NewField extends AbstractModifier
 {
     private $locator;
+
     public function __construct(
         LocatorInterface $locator
     ) {
@@ -22,15 +25,16 @@ class NewField extends AbstractModifier
     {
         $meta = array_replace_recursive($meta,
             [
-                'custom_fieldset' => [
+                'newFields' => [
                     'arguments' => [
                         'data' => [
                             'config' => [
                                 'label' => __('Custom Fieldset'),
                                 'componentType' => Fieldset::NAME,
-                                'dataScope' => 'data.product.custom_fieldset',
+                                'dataScope' => 'data.product.newFields',
                                 'collapsible' => true,
-                                'sortOrder' => 5,
+                                'required' => 0,
+                                'sortOrder' => 1,
                             ],
                         ],
                     ],
@@ -56,8 +60,11 @@ class NewField extends AbstractModifier
                         'dataType' => Text::NAME,
                         'sortOrder' => 10,
                         'options' => [
-                            ['value' => '0', 'label' => __('No')],
-                            ['value' => '1', 'label' => __('Yes')]
+                            ['value' => '0', 'label' => __('Loc')],
+                            ['value' => '1', 'label' => __('Rat')],
+                            ['value' => '2', 'label' => __('La')],
+                            ['value' => '3', 'label' => __('Dep')],
+                            ['value' => '4', 'label' => __('Trai')],
                         ],
                     ],
                 ],
